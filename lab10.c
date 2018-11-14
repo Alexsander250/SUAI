@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-/*В символьной строке оставить только те  слова, в которых встречаются подряд идущие одинаковые буквы*/
-
 void main()
 
 {
@@ -84,16 +81,14 @@ void main()
 			while (*ptr != '\0')
 			{
 
-				if ((*ptr == ' ' || *ptr == '\0') && (*(ptr-1) > '!' || *(ptr-1) < 'я'))
+				if ((*ptr == ' ' || *ptr == '\n') && (*(ptr-1) > '!' || *(ptr-1) < 'я'))
 				{
 						cword++;			//счетчик слов
 				}
 				
 				ptr++;
 			}
-			printf("\n Кол-во слов=%d", cword);
-			printf(" строка = %s", strs[i]);
-			//system("pause");
+
 			if (cword > max)
 			{
 				max = cword;
@@ -119,3 +114,4 @@ void main()
 	fclose(fin);
 	fclose(fout);
 }
+
